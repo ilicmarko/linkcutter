@@ -1,0 +1,63 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+.trackmore-title {
+  margin-top: 20px;
+  cursor: pointer;
+
+  i {
+    margin-left: 10px;
+    transition: transform .3s ease-in-out;
+  }
+
+  &.open i {
+    transform: rotate(180deg);
+  }
+}
+
+.trackmore-info {
+  max-height: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+
+  border-radius: 8px;
+
+  transition: max-height .3s ease-in-out;
+
+  background-color: #f5f5f5;
+
+  overflow: hidden;
+
+  &.open {
+    max-height: 400px;
+  }
+}
+
+.trackmore-content {
+  padding: 20px;
+}
+
+.shorturl-alert {
+  margin-top: 20px;
+}
+
+.shortlink-input {
+  text-align: center;
+}
+
+#regions_div {
+  margin: 30px auto;
+}
