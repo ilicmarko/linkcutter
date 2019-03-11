@@ -1,0 +1,221 @@
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+@import 'tools/tools';
+
+@import 'icons';
+
+$sidebar-background: #FFF;
+$sidebar-link-height: 60px;
+$sidebar-link-color: #595959;
+
+.dashboard-content {
+  display: grid;
+  grid-template:
+          ' sidebar container ' 1fr
+    / 20%  1fr;
+  grid-column-gap: 30px;
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  grid-area: container;
+  padding: 20px 30px 20px 0;
+}
+
+
+.dashboard-stats-container {
+  display: grid;
+  grid-template:
+          ' segment1 segment2 segment3 ' auto
+          ' graph graph graph ' auto
+          ' stats stats stats2 ' 1fr
+          ' stats stats stats3 ' 1fr
+    / 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+$sidebar:     '.dashboard-sidebar';
+
+.dashboard-logo {
+  position: relative;
+  @include size(48px);
+
+  z-index: 1;
+
+  path {
+    transition: fill .3s ease-in-out;
+    fill: #fff;
+  }
+}
+
+.dashboard-sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 0 20px rgba(#d2d2d2, .2);
+
+  background-color: $sidebar-background;
+  background-image: linear-gradient(to right, $brand-primary $sidebar-link-height, $sidebar-background $sidebar-link-height);
+
+  &__list {
+    @include list-unstyled;
+  }
+
+  li {
+    border-right: 5px solid transparent;
+    &.active {
+      border-right: 5px solid $brand-primary;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: $sidebar-link-height;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      #{$sidebar}__link-icon-container::before {
+        transform: scaleX(.95);
+      }
+
+      #{$sidebar}__link-icon {
+        stroke: $brand-primary;
+      }
+
+      .dashboard-logo {
+        &__top { fill: lighten($brand-primary, 10);}
+        &__middle { fill: darken($brand-primary, 5);}
+        &__bottom { fill: darken($brand-primary, 20);}
+      }
+    }
+  }
+
+  &__link-icon-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include size($sidebar-link-height);
+
+    background-color: $brand-primary;
+
+    color: #fff;
+    text-align: center;
+
+    &::before {
+      display: block;
+      @include absolute(0);
+      transform: scaleX(0);
+      transform-origin: left center;
+
+      transition: transform .3s ease-in-out .1s;
+
+      background-color: #fff;
+
+      content: '';
+
+      will-change: transform;
+    }
+  }
+
+  &__link-icon {
+    position: relative;
+    @include size(18px);
+
+    transition: stroke .3s ease-in-out;
+
+    z-index: 1;
+  }
+
+  &__link-name {
+    margin-left: 20px;
+    
+    color: $sidebar-link-color;
+    font-weight: bold;
+  }
+}
+
+$card-background: #fff;
+
+.dashboard-card {
+  padding: 12px 24px;
+  box-shadow: 0 1px 15px 1px rgba(62,57,107,.07);
+
+  border-radius: 4px;
+
+  background-color: $card-background;
+
+  &--primary {
+    background-color: $brand-primary;
+
+    color: #fff;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &__table {
+    .table th { border-top: 0; }
+  }
+}
+
+
+.dashboard-segment {
+  display: flex;
+  align-items: center;
+
+  &--1 { grid-area: segment1; }
+  &--2 { grid-area: segment2; }
+  &--3 { grid-area: segment3; }
+
+  &__chart {
+    width: 36px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 30px;
+  }
+}
+
+.dashboard-linechart {
+  grid-area: graph;
+}
+
+.dashboard-info {
+  grid-area: stats;
+
+  &--2 {
+    position: relative;
+    grid-area: stats2;
+
+    overflow: hidden;
+
+    &::before {
+      @include absolute(top 0 right -30px bottom 0);
+      width: 110px;
+      transform: rotate(30deg) translate(5px, 20px);
+
+      background-image: url('../images/wallet.svg');
+      background-size: cover;
+
+      opacity: .3;
+      content: '';
+    }
+  }
+  &--3 { grid-area: stats3; }
+}
+
+.input-changed {
+  background-color: #f1c40f;
+}

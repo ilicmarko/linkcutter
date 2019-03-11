@@ -1,0 +1,365 @@
+$root:    '.c-pricing';
+
+
+#{$root} {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: auto;
+  padding: 20px 0;
+  @include box-shadow;
+
+  border-radius: 8px;
+
+  background-color: #FFFFFF;
+
+  &.empty-box {
+    box-shadow: none;
+  }
+
+  &.empty-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f8ff;
+  }
+
+  &-container {
+    @extend %container;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    height: 100%;
+  }
+
+  &__header,
+  &__list,
+  &__footer {
+    padding: 10px 20px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    &--disabled {
+      opacity: .3;
+    }
+  }
+
+  &__header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      @include absolute(top 0 bottom 0 left -10px);
+      width: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+
+      @include border-right-radius(16px);
+
+      background-color: $brand-secondary;
+
+      content: '';
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    @include font-size(18px);
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    color: $brand-secondary;
+    @include font-size(32px, 1);
+    font-weight: bold;
+
+    &-cur {
+      margin-left: 4px;
+      @include font-size(16px, 1);
+    }
+  }
+
+  &__list {
+    @extend %list-reset;
+    margin-top: 20px;
+
+    li {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #eeeeee;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+
+    &-btn {
+      display: block;
+      width: 100%;
+      padding: .5em 1.5em;
+
+      text-transform: uppercase;
+      letter-spacing: .05rem;
+    }
+  }
+}
+
+$color-1: #0f222b; // Firefly
+$color-2: #95ac5f; // Chelsea Cucumber
+$color-3: #ffffff; // White
+$color-4: #df4f71; // Cranberry
+
+
+$animation-duration: .8s;
+$animation-delay: .2s;
+
+
+$S:     480px;
+$M:     768px;
+$L:     1024px;
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+    @media only screen and (min-width: $S) { @content; }
+  }
+  @else if $canvas == M {
+    @media only screen and (min-width: $M) { @content; }
+  }
+  @else if $canvas == L {
+    @media only screen and (min-width: $L) { @content; }
+  }
+}
+
+// super light grid - it works with the .cd-container class inside style.scss
+
+@mixin column($percentage, $float-direction:left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+/// PAYMENT
+
+.example.example2 .row {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 5px 10px;
+}
+
+.example.example2 .field {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.example.example2 .field.half-width {
+  width: 50%;
+}
+
+.example.example2 .field.quarter-width {
+  width: calc(25% - 10px);
+}
+
+.example.example2 .baseline {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #cfd7df;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 label {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 8px;
+  color: #cfd7df;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform-origin: 0 50%;
+  cursor: text;
+  transition-property: color, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 7px;
+  color: #32325d;
+  background-color: transparent;
+}
+
+.example.example2 .input::-webkit-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input::-moz-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input:-ms-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.example.example2 .input.StripeElement {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity;
+}
+
+.example.example2 .input.focused,
+.example.example2 .input:not(.empty) {
+  opacity: 1;
+}
+
+.example.example2 .input.focused::-webkit-input-placeholder,
+.example.example2 .input:not(.empty)::-webkit-input-placeholder {
+  color: #cfd7df;
+}
+
+.example.example2 .input.focused::-moz-placeholder,
+.example.example2 .input:not(.empty)::-moz-placeholder {
+  color: #cfd7df;
+}
+
+.example.example2 .input.focused:-ms-input-placeholder,
+.example.example2 .input:not(.empty):-ms-input-placeholder {
+  color: #cfd7df;
+}
+
+.example.example2 .input.focused + label,
+.example.example2 .input:not(.empty) + label {
+  color: #aab7c4;
+  transform: scale(0.85) translateY(-25px);
+  cursor: default;
+}
+
+.example.example2 .input.focused + label {
+  color: #24b47e;
+}
+
+.example.example2 .input.invalid + label {
+  color: #ffa27b;
+}
+
+.example.example2 .input.focused + label + .baseline {
+  background-color: #24b47e;
+}
+
+.example.example2 .input.focused.invalid + label + .baseline {
+  background-color: #e25950;
+}
+
+.example.example2 input, .example.example2 button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+}
+
+
+.example.example2 .StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+.example.example2 button {
+  display: block;
+  width: calc(100% - 30px);
+  height: 40px;
+  margin: 40px 15px 0;
+  background-color: #24b47e;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.example.example2 .error svg {
+  margin-top: 0 !important;
+}
+
+.example.example2 .error svg .base {
+  fill: #e25950;
+}
+
+.example.example2 .error svg .glyph {
+  fill: #fff;
+}
+
+.example.example2 .error .message {
+  color: #e25950;
+}
+
+.example.example2 .success .icon .border {
+  stroke: #abe9d2;
+}
+
+.example.example2 .success .icon .checkmark {
+  stroke: #24b47e;
+}
+
+.example.example2 .success .title {
+  color: #32325d;
+  font-size: 16px !important;
+}
+
+.example.example2 .success .message {
+  color: #8898aa;
+  font-size: 13px !important;
+}
+
+.example.example2 .success .reset path {
+  fill: #24b47e;
+}

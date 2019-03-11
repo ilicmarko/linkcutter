@@ -1,0 +1,431 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Logovanje · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="subscription.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Uvod</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Uvod
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Projekat</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="intro/idea.html">
+            
+                <a href="intro/idea.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Ideja
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="intro/solution.html">
+            
+                <a href="intro/solution.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Rešenje
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="intro/installation.html">
+            
+                <a href="intro/installation.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Instalacija
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Arhitektura</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="users.html">
+            
+                <a href="users.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Korisnici
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="features.html">
+            
+                <a href="features.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Mogućnosti
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="visits.html">
+            
+                <a href="visits.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Posete
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="subscription.html">
+            
+                <a href="subscription.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    Pretplata
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.5" data-path="logging.html">
+            
+                <a href="logging.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    Logovanje
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Logovanje</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="logovanje">Logovanje</h1>
+<p>Prilikom izrade veb aplikacije vrlo je va&#x17E;no pratiti potencijalne gre&#x161;ke,a kako se ovde koristi Laravel okru&#x17E;enje, logavanje se vr&#x161;i automatski za svaki vid gre&#x161;ke.</p>
+<p>Log fajl se nalazi u: <code>storage\logs\laravel.log</code></p>
+<p>Laravel je pode&#x161;en da radi logovanje na vi&#x161;e kanala:</p>
+<ul>
+<li>Single - Njegov standardni log,</li>
+<li>Slack</li>
+</ul>
+<h2 id="slack">Slack</h2>
+<p>Slack je pode&#x161;en da prijavljuje gre&#x161;ke &#x10D;iji je minimalni nivo va&#x17E;nosti <strong>critical</strong>.</p>
+<p>Ovo je mogu&#x107;e promeniti u konfiguraciji za logovanje: <code>config\logging.php</code></p>
+<p>Trenutno kako je pode&#x161;en slack je:</p>
+<pre><code class="lang-php"><span class="hljs-string">&apos;slack&apos;</span> =&gt; [
+    <span class="hljs-string">&apos;driver&apos;</span> =&gt; <span class="hljs-string">&apos;slack&apos;</span>,
+    <span class="hljs-string">&apos;url&apos;</span> =&gt; env(<span class="hljs-string">&apos;LOG_SLACK_WEBHOOK_URL&apos;</span>),
+    <span class="hljs-string">&apos;username&apos;</span> =&gt; <span class="hljs-string">&apos;LinkCutter Log&apos;</span>,
+    <span class="hljs-string">&apos;emoji&apos;</span> =&gt; <span class="hljs-string">&apos;:boom:&apos;</span>,
+    <span class="hljs-string">&apos;level&apos;</span> =&gt; <span class="hljs-string">&apos;critical&apos;</span>, <span class="hljs-comment">// Minimalni nivo</span>
+],
+</code></pre>
+<blockquote>
+<p>Status gre&#x161;ke je odre&#x111;en po <strong>RFC 5424</strong> specifikaciji.</p>
+<p><a href="https://tools.ietf.org/html/rfc5424" target="_blank">https://tools.ietf.org/html/rfc5424</a></p>
+<p>Gre&#x161;ke po va&#x17E;nosti:</p>
+<pre><code>Numerical         Severity
+Code
+
+0       Emergency: system is unusable
+1       Alert: action must be taken immediately
+2       Critical: critical conditions
+3       Error: error conditions
+4       Warning: warning conditions
+5       Notice: normal but significant condition
+6       Informational: informational messages
+7       Debug: debug-level messages
+</code></pre></blockquote>
+<p>Na&#x10D;in na koji laravel obave&#x161;tava slack je pomo&#x107;u webhook-a koji je pode&#x161;en u Slack-u.</p>
+<p><a href="https://api.slack.com/incoming-webhooks" target="_blank">https://api.slack.com/incoming-webhooks</a></p>
+<p>Kad se napravi hook potrebno je iskopirati URL do hook-a i dodati ga u <code>.env</code> fajlu kao <code>LOG_SLACK_WEBHOOK_URL</code> opcija.</p>
+<h3 id="laravel-logovanje">Laravel logovanje</h3>
+<p>Na&#x10D;in na koji mo&#x17E;emo da logujemo gre&#x161;ku je preko Log fasade:</p>
+<pre><code class="lang-php">Log::emergency($message);
+Log::alert($message);
+Log::critical($message); <span class="hljs-comment">// Odavde pa na gore se loguje u slack-u</span>
+Log::error($message);
+Log::warning($message);
+Log::notice($message);
+Log::info($message);
+Log::debug($message);
+</code></pre>
+<p>Recimo da &#x17E;elimo da obavestimo administratora da neko &#x17E;eli da pristupi admin sistemu a za to nema odgovaraju&#x107;e permisije. To je mogu&#x107;e uraditi u posredniku (middleware-u) koji proverava da li korisnik ima permisije i  obave&#x161;tava administratora.</p>
+<pre><code class="lang-php">Log::critical(<span class="hljs-string">&apos;Someone tried to access the admin panel.&apos;</span>, [
+    <span class="hljs-string">&apos;IP&apos;</span>        =&gt; $request-&gt;ip(),
+    <span class="hljs-string">&apos;Browser&apos;</span>   =&gt; $request-&gt;server(<span class="hljs-string">&apos;HTTP_USER_AGENT&apos;</span>),
+    <span class="hljs-string">&apos;Referer&apos;</span>  =&gt;$request-&gt;server(<span class="hljs-string">&apos;HTTP_REFERER&apos;</span>),
+]);
+</code></pre>
+<p>Kako to izgleda kad administrator primi poruku:</p>
+<p><img src="images/slack_msg.png" alt="Slack poruka"></p>
+<h2 id="sentry">Sentry</h2>
+<p>Kao dodatni i profesinalniji na&#x10D;in logovanja koristi se <a href="https://sentry.io" target="_blank">Sentry</a>. Sentry obuhvata obradu izuzetaka koji se &#x161;alju Sentry-u na obradu.</p>
+<p><img src="images/sentry.png" alt="Sentry"></p>
+<p>Svaka gre&#x161;ka koja se desi, Sentry pretvara u task koji mo&#x17E;e da se dodeli nekom od &#x10D;lanova tima. Na taj na&#x10D;in svaki izuzetak biva re&#x161;en.</p>
+<p>Obave&#x161;tenje se tako&#x111;e &#x161;alje na mail.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="subscription.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Pretplata">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Logovanje","level":"3.5","depth":1,"previous":{"title":"Pretplata","level":"3.4","depth":1,"path":"subscription.md","ref":"subscription.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"logging.md","mtime":"2019-03-11T10:06:17.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-11T10:28:15.854Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

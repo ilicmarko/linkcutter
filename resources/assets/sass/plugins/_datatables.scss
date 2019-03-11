@@ -1,0 +1,44 @@
+$pagination-height: 32px;
+
+.dataTables_paginate {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+  margin: 2em 0;
+
+  .paginate_button {
+    display: inline-block;
+    height: $pagination-height;
+    padding: 0 1em;
+    margin: 0 5px;
+    transition: background-color .3s ease;
+
+    border-radius: 4px;
+    border: 0;
+
+    background: none;
+
+    color: #23272b;
+    line-height: $pagination-height;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+
+    &.current {
+      color: #fff;
+      background-color: $brand-secondary;
+    }
+
+    &:disabled {
+      color: #23272b;
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  }
+}

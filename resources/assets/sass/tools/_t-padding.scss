@@ -1,0 +1,9 @@
+@mixin padding-vertical($px) {
+  padding-top: $px;
+  padding-bottom: $px;
+}
+
+@mixin padding-horizontal($px) {
+  padding-right: $px;
+  padding-left: $px;
+}

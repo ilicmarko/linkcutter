@@ -1,82 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="bearer-token" content="{{ Cookie::get('TOKEN') }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title') :: LinkCutter</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <nav class="c-main-nav"><img class="c-main-nav__logo" src="{{asset('images/logo_color.svg')}}">
+            <ul class="c-main-nav__list">
+                <li class="c-main-nav__item"><a class="c-main-nav__link--active c-main-nav__link" href="{{ url('/') }}">Home</a></li>
+                <li class="c-main-nav__item"><a class="c-main-nav__link" href="{{ url('/#pricing') }}">Pricing</a></li>
+            </ul>
+            <ul class="c-main-nav__list c-main-nav__list--right">
+                @guest
+                    <li class="c-main-nav__item"><a class="c-main-nav__link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                    <li class="c-main-nav__item"><a class="c-main-nav__link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                @else
+                    <li class="c-main-nav__item c-main-nav__dropdown"><a class="c-main-nav__link" href="#">{{ Auth::user()->name }}</a>
+                        <ul class="c-main-nav__dropdown-menu">
+                            @if (Auth::user()->subscribed())
+                                <li><span class="c-main-nav__dropdown-link"><small>{{ Auth::user()->subscriptionName() }}</small></span></li>
+                            @endif
+                            <li><a class="c-main-nav__dropdown-link" href="{{ route('profile.view') }}">Account</a></li>
+                            <li>
+                                <a class="c-main-nav__dropdown-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
 
-            .full-height {
-                min-height: 100vh;
-            }
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="c-main-nav__item"><a class="c-main-nav__link" href="{{ route('dashboard.home') }}">Dashboard</a></li>
+                    @if (Auth::user()->admin === 1)
+                        <li class="c-main-nav__item"><a class="c-main-nav__link" href="{{ route('admin') }}">{{ __('Admin') }}</a></li>
+                    @endif
+                @endguest
+            </ul>
+        </nav>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        @include('layouts.alert-upgrade')
+        @include('layouts.success')
+        @include('layouts.errors')
 
-            .position-ref {
-                position: relative;
-            }
+        <main class="wrapper">
+            @yield('content')
+        </main>
+    </div>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    @yield('scripts')
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-        
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-               @yield('content')
-            </div>
-        </div>
-        <script src="{{ asset('js/app.js') }}"></script>
-        @yield('scripts')
-    </body>
+</body>
 </html>

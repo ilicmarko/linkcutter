@@ -13,8 +13,3 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('register', 'AuthController@register');
-Route::post('login', 'AuthController@login');
-
-Route::middleware('auth:api')->post('/cut', 'Link@cut');
-Route::middleware('auth:api')->get('/r', 'Link@redirect');

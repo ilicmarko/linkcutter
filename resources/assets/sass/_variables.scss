@@ -1,8 +1,43 @@
+// ---------------------------------------------
+// 			Colors
+// ---------------------------------------------
 
-// Body
-$body-bg: #f5f8fa;
+$brand-primary:			#325dff !default;
+$brand-secondary:		#45e791 !default;
 
-// Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$brand-success:			#39b54a !default;
+$brand-error:			#f04e4e !default;
+
+$body-bg:				#fff !default;
+$body-bg-dark:          #EFF6F9;
+
+$text-gray:             #d2d2d2;
+
+$image-path:			  '../images' !default;
+
+// ---------------------------------------------
+// 			Type
+// ---------------------------------------------
+
+$global-font-family:	'Raleway', sans-serif !default;
+$font-family-base:      $global-font-family; // Boootstrap override
+$global-font-size:    	16px !default;
+$global-font-color:		#636363 !default;
+$global-line-height:  	24px !default;
+$global-font-secondary:	'Raleway', sans-serif !default;
+
+$heading-font-family:	$global-font-secondary;
+
+$font-size-h1:  		42px !default;
+$font-size-h2:  		36px !default;
+$font-size-h3:  		24px !default;
+$font-size-h4: 			20px !default;
+$font-size-h5:  		18px !default;
+$font-size-h6:  		16px !default;
+
+// Sidebar
+
+$sidebar-background: #FFF;
+
+
+$container-padding: 10%;

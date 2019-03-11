@@ -1,0 +1,107 @@
+$root:    '.c-link-input';
+
+
+#{$root} {
+  position: relative;
+  margin: 20px 0;
+  padding-top: 1em;
+
+  overflow: hidden;
+
+  &__input {
+    display: inline-block;
+    float: right;
+    width: 100%;
+    padding: 0.5em 0em 0.25em;
+
+    border: 0;
+
+    outline: none;
+
+    &:focus, &.is-changed {
+        + #{$root}__label {
+          color: #333;
+          transform: translate3d(0, -1.25em, 0) scale3d(0.75, 0.75, 1);
+        }
+
+        ~ #{$root}__svg {
+          transform: translate3d(-66.6%, 0, 0);
+        }
+    }
+  }
+
+  &__label {
+    @include absolute(top 0.95em left 0);
+    width: 100%;
+    padding: 0;
+
+    transform-origin: 0 0;
+    transition: transform .2s .15s, color 1s;
+    transition-timing-function: ease-in-out;
+
+    @include font-size(14px);
+    pointer-events: none;
+  }
+
+  &__svg {
+    @include absolute(top 0 left 0);
+    fill: none;
+    stroke: url(#linegrad);
+    stroke-width: 2px;
+    transition: transform 0.7s, stroke 0.7s;
+    transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+    pointer-events: none;
+  }
+}
+
+#{$root}-checkbox {
+  position: relative;
+  margin-bottom: 20px;
+
+  &__input,
+  &__label::before {
+    @include size(22px);
+    top: 50%;
+    left: 0;
+    margin-top: -11px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &__input {
+    opacity: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__label {
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 32px;
+
+
+    &::before {
+      content: '';
+      border: 2px solid $brand-secondary;
+      border-radius: 4px;
+      transition: opacity 0.3s;
+    }
+  }
+
+  svg {
+    position: absolute;
+    @include size(16px);
+    top: 50%;
+    margin-top: -8px;
+    left: 4px;
+    pointer-events: none;
+  }
+
+  path {
+    stroke: grey;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    stroke-width: 8px;
+  }
+}

@@ -14,6 +14,8 @@ try {
     require('bootstrap');
 } catch (e) {}
 
+require('datatables.net');
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -30,20 +32,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * a simple convenience so we don't have to attach every token manually.
  */
 
-let csrf = document.head.querySelector('meta[name="csrf-token"]');
+let token = document.head.querySelector('meta[name="csrf-token"]');
 
-if (csrf) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrf.content;
+if (token) {
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
-
-
-let token = document.head.querySelector('meta[name="bearer-token"]');
-const bearer_token = token.content;
-
-
-window.axios.defaults.headers.common['Authorization']  = 'Bearer ' + bearer_token
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

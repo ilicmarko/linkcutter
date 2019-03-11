@@ -1,0 +1,42 @@
+$root:    '.c-hero';
+
+
+#{$root} {
+  @extend %container;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+
+  &::before {
+    @include absolute(top 0 right 0 bottom 0);
+    width: 40%;
+
+    background-image: url("../images/side-wave.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+
+    z-index: -1;
+    content: '';
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 10px;
+
+    background-image: linear-gradient(to right, $brand-primary, $brand-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include font-size(54px);
+    font-weight: 300;
+  }
+
+  &__description {
+    margin-bottom: 10px;
+    color: grey;
+  }
+}

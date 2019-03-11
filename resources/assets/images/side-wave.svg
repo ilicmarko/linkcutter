@@ -1,0 +1,23 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 780 1080" style="enable-background:new 0 0 780 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#XMLID_2_);}
+</style>
+<filter id="dropshadow" height="130%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+  <feOffset dx="2" dy="2" result="offsetblur"/>
+  <feComponentTransfer>
+    <feFuncA type="linear" slope="0.5"/>
+  </feComponentTransfer>
+  <feMerge> 
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<linearGradient id="XMLID_2_" gradientUnits="userSpaceOnUse" x1="309.7614" y1="760.6601" x2="782.7029" y2="287.7186">
+	<stop  offset="0" style="stop-color:#325DFF"/>
+	<stop  offset="1" style="stop-color:#283C81"/>
+</linearGradient>
+<path id="XMLID_9_" style="filter:url(#dropshadow)" class="st0" d="M780.1,1080L779,490.9V0L280.7,0L111.5,169.5c-136.7,136.7-136.6,358.3,0.1,495
+	c52.4,52.4,117.3,84.7,185.1,96.9l0,0c0,0,0.1,0,0.2,0c15.6,2.8,36.1,4.3,47.2,5.9C465.8,784,780.1,849,780.1,1080z"/>
+</svg>

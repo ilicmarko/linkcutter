@@ -1,0 +1,49 @@
+$root:    '.c-link-box';
+
+
+#{$root} {
+  position: relative;
+  margin-top: 30px;
+  padding: 30px;
+  padding-left: 0;
+  transform: translateX(-100%);
+
+  transition: opacity .3s ease-in-out, transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  pointer-events: none;
+  opacity: 0;
+
+  &::before {
+    @include absolute(top 0 right 0 bottom 0);
+    width: 100vw;
+    @include box-shadow;
+
+    @include border-right-radius(8px);
+
+    background-color: $brand-primary;
+
+    content: '';
+    z-index: -1;
+  }
+  color: #fff;
+
+  &--visible {
+    transform: translateX(0);
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  &__input {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+
+    color: inherit;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+}

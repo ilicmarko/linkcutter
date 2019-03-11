@@ -1,0 +1,34 @@
+$root:    '.c-login';
+
+
+#{$root} {
+  &-canvas {
+    @include absolute(0);
+
+    //background-image: url($image-path + '/secure.jpg');
+    //background-size: cover;
+    //background-position: center;
+  }
+
+  &-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    //background-image: url($image-path + '/secure.jpg');
+    //background-size: cover;
+    //background-position: center;
+  }
+
+  &__box {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    @include box-shadow;
+
+    border-radius: 8px;
+
+    background-color: #FFFFFF;
+  }
+}

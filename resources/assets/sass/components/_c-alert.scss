@@ -1,0 +1,28 @@
+$root:    '.c-alert';
+
+@keyframes slide-in {
+  from { transform: translate3d(-50%, 100%, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+#{$root} {
+  @include fixed(bottom 0 left 50%);
+  transform: translateX(-50%);
+  max-width: 400px;
+  padding: 5px 15px;
+  transform: translate3d(-50%, 100%, 0);
+
+  animation: slide-in .3s forwards;
+
+  @include border-top-radius(4px);
+
+  color: #FFFFFF;
+  text-align: center;
+
+  cursor: pointer;
+  z-index: 47;
+
+  &--success { background-color: $brand-success; }
+  &--error { background-color: $brand-error; }
+  &--info { background-color: $brand-primary; }
+}

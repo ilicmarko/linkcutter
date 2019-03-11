@@ -1,0 +1,52 @@
+$root:    '.c-scroll-down';
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+#{$root} {
+  @include absolute(bottom 0 left $container-padding);
+  width: 500px;
+  height: 120px;
+
+  background-image: url("../images/bottom-wave.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+
+  &__mouse {
+    @include absolute(left 50% top 50%);
+    height: 38px;
+    width: 24px;
+    margin-right: 20px;
+
+    border-radius: 14px;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+
+    &::before {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      height: 6px;
+      width: 6px;
+      margin-left: -3px;
+
+      border-radius: 50%;
+
+      animation-name: scroll;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+
+      background-color: #FFFFFF;
+
+      content: '';
+    }
+  }
+}

@@ -1,0 +1,7 @@
+%container {
+  @include padding-horizontal($container-padding);
+}
+
+%link-container {
+  @include padding-horizontal(20px);
+}

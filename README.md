@@ -1,10 +1,25 @@
 # LinkCutter
 
-![Logo](logo_small.png)
+Author: [Marko](https://ilic.ninja), 2018.
 
-## Problem
+Framework: [Laravel 5.6](https://laravel.com/docs/5.6)
 
-> Create URL shortening service using your favourite PHP framework. This service should have homepage with two input boxes, one for URL that needs to be shortened and one for user’s email addresses (optional). After user submits the form, system should generate hard-to-guess short URL which will be presented on the details page. If user also entered his email address, he should receive an email containing generated short URL along with personal link for details page. Details page should be unique for each link and should contain total and unique number of times someone has visited this URL. Described functionality should be presented through regular web interface but also should be exposed via API.
+## Setup Development Environment
+
+1. Clone repository.
+2. Run `composer install` to install dependencies.
+3. Create a copy of `.env.example` file, rename it to `.env` and input your own values.
+4. Run `vendor\\bin\\homestead make` to generate Vagrantfile and Homestead.yaml configuration
+    (see [Laravel Homestead](https://laravel.com/docs/5.6/homestead)).
+5. Edit Homestead.yaml in order to setup project URL.
+6. Run `vagrant up` to start virtual machine.
+7. Run `vagrant ssh` to connect to virtual machine.
+8. Go to `/vagrant` directory.
+9. Run `php artisan storage:link` to create symbolic link in public folder, pointing to actual file storage folder.
+10. Run `php artisan migrate` to create database tables.
+11. Run `php artisan db:seed` to insert test data.
+12. Run `php artisan key:generate` to generate random crypto key.
+13. Run `php artisan passport:keys` to generate Passport crypto keys.
 
 ## Solution
 

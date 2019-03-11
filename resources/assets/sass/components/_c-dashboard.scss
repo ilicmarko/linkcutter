@@ -1,0 +1,61 @@
+$root:    '.c-dashboard';
+
+
+#{$root}__header {
+  @extend %container;
+  padding-top: 100px;
+
+  &-title {
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid $text-gray;
+
+    font-weight: 300;
+  }
+}
+
+
+#{$root} {
+  &__chart {
+    position: relative;
+    height: 65vh;
+
+    &::before {
+      @include absolute(top 70% bottom 0);
+      width: 100%;
+
+      background-image: linear-gradient(to top, $body-bg, rgba($body-bg, 0));
+
+      content: '';
+    }
+  }
+}
+
+
+#{$root}__card {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: auto;
+  padding: 20px;
+  @include box-shadow;
+
+  border-radius: 8px;
+
+  background-color: #FFFFFF;
+
+  &-num {
+    margin-bottom: 10px;
+
+    @include font-size(24px);
+    font-weight: bold;
+  }
+
+  &-container {
+    @extend %container;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    transform: translateY(-50%);
+  }
+}
