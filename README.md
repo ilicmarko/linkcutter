@@ -1,4 +1,6 @@
-# LinkCutter
+# 🚧 LinkCutter
+
+> This is an oldish project I did. I am currently working on translating the docs because they are written in Serbian.
 
 Author: [Marko](https://ilic.ninja), 2018.
 
