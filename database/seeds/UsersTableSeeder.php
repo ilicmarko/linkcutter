@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' =>       'Marko Ilic',
-            'email' =>      'ilic.marko.05@live.com',
+            'email' =>      'admin@admin.io',
             'stripe_id' => 'cus_D2wwe87mCARXcd',
             'password' =>   bcrypt('admin'),
             'admin' =>      true

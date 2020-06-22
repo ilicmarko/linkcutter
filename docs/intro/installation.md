@@ -1,30 +1,18 @@
-# Instalacija
+# Installation
 
-Pokretanje projekta je prilično jednostavno, zato što je upotrebljen **Homestead** koji koristi Vagrant za pravljenje virtuelne mašine. Više o Homestead-u na Laravelom [sajtu](https://laravel.com/docs/5.6/homestead#installation-and-setup).
+As this is a Laravel project it uses Homestead, therefore the setup is standard.
 
-Moguće je pokrenuti projekat na dva načina.
-
-Prvi i jednostavniji način:
-
-1. Pokrenuti `composer install`.
-2. Napraviti tabelu u bazi.
-3. Napraviti kopiju `.env.example` fajla, promeniti mu ime u `.env` i podesiti vrednosti.
-4. Pokrenuti `php artisan migrate --seed`, kako bi pokrenuli migraciju i popunjavanje tabela.
-5. Pokrenuti `php artisan key:generate` kako bi generisali kripto ključeve.
-6. Pokrenuti `php artisan server` kako bi podigli projekat.
-7. Pristupiti projektu preko `127.0.0.1:8000`.
-
-Takođe projekat je moguće pokrenuti preko virtuelne mašine:
-
-1. Pokrenuti `composer install`.
-2. Napraviti kopiju `.env.example` fajla, i promeniti mu ime u `.env`.
-3. Pokrenuti `vendor\\bin\\homestead make` , ovo će generisati Homestead instancu.
-4. Izmeniti`Homestead.yaml ` fajl, postaviti željeni URL projekta
-5. Izmeniti `hosts` fajl operativnog sistema, tako da URL projekta pokazuje na `192.168.10.10`.
-6. Pokrenuti ``vagrant up` kako bi se pokrenula virtualna mašina.
-7. Pokrenuti `vagrant ssh` kako bi pristupili mašini.
-8. Pokrenuti `cd /vagrant` kako bi promenili direktorijum.
-9. Pokrenuti `php artisan key:generate`.
-10. Pokrenuti `php artisan storage:link`.
-11. Pokrenuti `php artisan migrate --seed`, kako bi pokrenuli migraciju i popunjavanje tabela.
-12. Pristupiti projektu preko podešenog URL-a.
+1. Clone repository.
+2. Create a copy of `.env.example` file, rename it to `.env` and input your own values.
+3. Run `composer install` to install dependencies.
+4. Run `php vendor/bin/homestead make` to generate Vagrantfile and Homestead.yaml configuration.
+    (see [Laravel Homestead](https://laravel.com/docs/5.8/homestead)).
+5. Edit Homestead.yaml in order to setup project URL.
+6. Run `vagrant up` to start virtual machine.
+7. Run `vagrant ssh` to connect to virtual machine.
+8. Go to `/vagrant` directory.
+9. Run `php artisan storage:link` to create symbolic link in public folder, pointing to actual file storage folder.
+10. Run `php artisan migrate` to create database tables.
+11. Run `php artisan db:seed` to insert test data.
+12. Run `npm install` to fetch frontend dependencies.
+13. Run `npm run dev` to build frontend assets.

@@ -1,10 +1,17 @@
-## Tehnologije
+# LinkCutter
 
-Vrlo je bitno projekat gledati u modernim veb pregledačima.
+> Shortening URLs in a modern way and tracking like NSA.
 
-Prilikom izrade projekta korišćeni su sledece tehnologije:
+### 🚧 Under development, never fully finished.
 
-* PHP 7.2.6
-* Laravel 5.6
-* SCSS
-* ES6
+This project was rapidly developed to meet a certain deadline, after the deadline it was never finished.
+Therefore, there are some bug, not all user flows have been finished.
+
+
+## Getting Started
+
+Check out the [Quick Start](quick-start.md) documentation to get started.
+
+## Contributing
+
+Check out the [Contributing Guide](https://github.com/ilicmarko/linkcutter/blob/master/CONTRIBUTING.md) for more details.

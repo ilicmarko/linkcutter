@@ -1,5 +1,7 @@
-# Ideja
+# Idea
 
-Danas veliki broj socijalnih mreža, kao i razni alati za komunikaciju, ograničavaju broj karaktera u poruci. Iz tog razloga je potrebno *skratiti* link,pa se tako rodila ideja za ovu aplikaciju.
+Today, a large number of social networks, as well as various communication tools, limit the number of characters in a message.
+For this reason, you need to *shorten* the link, so the idea for this application was born.
 
-Takođe ova implementacija ima jak marketinški potencijal, gde korisnik ima potpun uvid u to ko je posetio njegov link. Samim tim korisnik može da skrati i već "kratak" link kako bi imao mogućnost praćenja poseta preko njegovog skraćenog linka.
+Also, this implementation has a strong marketing potential, where the user has complete insight into who has visited his link.
+Therefore, the user can also shorten the "short" link to be able to track the visit via its shortened link.

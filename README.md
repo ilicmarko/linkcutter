@@ -1,6 +1,6 @@
 # LinkCutter
 
-Author: [Marko](https://ilic.ninja), 2018.
+![Logo](logo_small.png)
 
 Framework: [Laravel 5.6](https://laravel.com/docs/5.6)
 
@@ -116,3 +116,5 @@ From the above you can see that a visitor is not unique if he has the same IP ad
 
 
 [^1]: `SHA512` has a character pool of 22  characters `[a-fA-F0-9]` and a maximal link length is six  characters so this is 22^6
+
+Author: [Marko](https://ilic.ninja), 2018.
