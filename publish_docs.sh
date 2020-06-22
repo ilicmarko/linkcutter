@@ -1,12 +1,12 @@
+# checkout to the gh-pages branch
+git checkout gh-pages
+
 cd docs/
 
 # install the plugins and build the static site
 gitbook install && gitbook build
 
 cd ../
-
-# checkout to the gh-pages branch
-git checkout gh-pages
 
 # copy the static site files into the current directory.
 cp -R docs/_book/* ./
