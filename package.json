@@ -22,7 +22,7 @@
     "dependencies": {
         "chart.js": "^2.7.2",
         "datatables.net-dt": "^1.10.16",
-        "npm": "^6.1.0",
+        "npm": "^6.14.6",
         "zxcvbn": "^4.4.2"
     }
 }
